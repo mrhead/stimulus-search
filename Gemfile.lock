@@ -47,9 +47,15 @@ GEM
     archive-zip (0.11.0)
       io-like (~> 0.3.0)
     arel (9.0.0)
+    autoprefixer-rails (9.1.4)
+      execjs
     bindex (0.5.0)
     bootsnap (1.3.2)
       msgpack (~> 1.0)
+    bootstrap (4.1.3)
+      autoprefixer-rails (>= 6.0.3)
+      popper_js (>= 1.12.9, < 2)
+      sass (>= 3.5.2)
     builder (3.2.3)
     byebug (10.0.2)
     capybara (3.9.0)
@@ -106,6 +112,7 @@ GEM
     nokogiri (1.8.4)
       mini_portile2 (~> 2.3.0)
     pg (1.1.3)
+    popper_js (1.14.3)
     public_suffix (3.0.3)
     puma (3.12.0)
     rack (2.0.5)
@@ -199,6 +206,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
+  bootstrap
   byebug
   capybara
   chromedriver-helper
