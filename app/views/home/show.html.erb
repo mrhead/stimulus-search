@@ -1,5 +1,5 @@
-<%= form_with url: people_search_path, class: "search" do |form| %>
-  <%= form.text_field :query, placeholder: "Search by person name", class: "search__input" %>
+<div class="search">
+  <%= text_field_tag :query, "", placeholder: "Search people by name", class: "search__input" %>
   <div>
     <ul class="search__results">
       <li class="search__result">John Doe</li>
@@ -7,4 +7,4 @@
       <li class="search__result">Another Doe</li>
     </ul>
   </div>
-<% end %>
+</div>
