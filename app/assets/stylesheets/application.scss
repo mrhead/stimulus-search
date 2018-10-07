@@ -13,4 +13,8 @@
  *= require_tree .
  *= require_self
  */
-@import "bootstrap";
+
+body {
+  font-size: 16px;
+  font-family: system-ui;
+}
