@@ -1,0 +1,15 @@
+.person {
+  width: 600px;
+  margin: 100px auto 0 auto;
+}
+
+.person__name {
+  font-size: 50px;
+}
+
+.person__back_to_search_link {
+  a {
+    color: black;
+    padding: 5px;
+  }
+}

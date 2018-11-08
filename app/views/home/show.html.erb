@@ -1,10 +1,5 @@
-<div class="search">
-  <%= text_field_tag :query, "", placeholder: "Search people by name", class: "search__input" %>
-  <div>
-    <ul class="search__results">
-      <li class="search__result">John Doe</li>
-      <li class="search__result search__result--active">Jane Doe</li>
-      <li class="search__result">Another Doe</li>
-    </ul>
+<div class="search" data-controller="search" data-search-url="<%= search_index_url %>">
+  <%= text_field_tag :query, "", placeholder: "Search people by name", class: "search__input", data: { action: "keyup->search#fetchResults keydown->search#navigateResults", target: "search.query" }, autofocus: true %>
+  <div data-target="search.results">
   </div>
 </div>

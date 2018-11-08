@@ -24,10 +24,18 @@
 }
 
 .search__result {
-  margin: 0;
-  padding: 10px;
+  a {
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    display: block;
+  }
 }
 
-.search__result--active {
+.search__result--current, .search__result:hover {
   background: #e0e0e0;
+}
+
+.search__result--empty {
+  padding: 10px;
 }
