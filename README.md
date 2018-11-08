@@ -1,24 +1,28 @@
-# README
+# Stimulus Search
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a simple search autocomplete example created with [Stimulus](https://stimulusjs.org/) and Rails 5.2.
 
-Things you may want to cover:
+![Autocomplete GIF](stimulus-search.gif)
 
-* Ruby version
+## Installation
 
-* System dependencies
+Clone the repository:
 
-* Configuration
+```
+git clone git@github.com:mrhead/stimulus-search.git
+```
 
-* Database creation
+Setup the application:
 
-* Database initialization
+```
+cd stimulus-search
+./bin/setup
+```
 
-* How to run the test suite
+Start the webserver:
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+bundle exec rails s
+```
 
-* Deployment instructions
-
-* ...
+Go to http://localhost:3000/.
