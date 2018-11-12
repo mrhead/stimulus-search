@@ -1,6 +1,6 @@
 # Stimulus Search
 
-This is a simple search autocomplete example created with [Stimulus](https://stimulusjs.org/) and Rails 5.2.
+This is a search autocomplete example created with [Stimulus](https://stimulusjs.org/) and Rails 5.2.
 
 ![Autocomplete GIF](stimulus-search.gif)
 
