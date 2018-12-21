@@ -31,6 +31,7 @@ export default class extends Controller {
   reset() {
     this.resultsTarget.innerHTML = ""
     this.queryTarget.value = ""
+    this.previousQuery = null
   }
 
   navigateResults(event) {
