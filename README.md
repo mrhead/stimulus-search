@@ -26,3 +26,12 @@ bundle exec rails s
 ```
 
 Go to http://localhost:3000/.
+
+## Testing
+
+Run:
+
+```
+rails test
+rails test:system
+```
