@@ -21,12 +21,23 @@ export default class extends Controller {
     const url = new URL(this.data.get("url"))
     url.searchParams.append("query", this.query)
 
-    fetch(url)
+    this.abortPreviousFetchRequest()
+
+    this.abortController = new AbortController()
+    fetch(url, { signal: this.abortController.signal })
       .then(response => response.text())
       .then(html => {
         this.resultsTarget.innerHTML = html
       })
   }
+
+  navigateResults(event) {
+    if(this.searchResultsController) {
+      this.searchResultsController.navigateResults(event)
+    }
+  }
+
+  // private
 
   reset() {
     this.resultsTarget.innerHTML = ""
@@ -34,9 +45,9 @@ export default class extends Controller {
     this.previousQuery = null
   }
 
-  navigateResults(event) {
-    if(this.searchResultsController) {
-      this.searchResultsController.navigateResults(event)
+  abortPreviousFetchRequest() {
+    if(this.abortController) {
+      this.abortController.abort()
     }
   }
 
