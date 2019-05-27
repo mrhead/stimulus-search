@@ -29,6 +29,7 @@ export default class extends Controller {
       .then(html => {
         this.resultsTarget.innerHTML = html
       })
+      .catch(() => {})
   }
 
   navigateResults(event) {
