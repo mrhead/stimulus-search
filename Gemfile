@@ -1,11 +1,9 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-gem "rails", "5.2.3"
+gem "rails", "6.0.2.1"
 
 gem "bootsnap"
-gem "coffee-rails"
-gem "jbuilder"
 gem "pg"
 gem "puma"
 gem "sass-rails"
