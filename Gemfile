@@ -4,12 +4,12 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 gem "rails", "6.0.2.1"
 
 gem "bootsnap"
-gem "pg"
 gem "puma"
 gem "sass-rails"
 gem "turbolinks"
 gem "uglifier" 
 gem "webpacker"
+gem "sqlite3"
 
 group :development, :test do
   gem "byebug"
