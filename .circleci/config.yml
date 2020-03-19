@@ -1,0 +1,42 @@
+version: 2
+
+jobs:
+  build:
+    docker:
+      - image: circleci/ruby:2.6.5-node-browsers
+
+    steps:
+      - checkout
+
+      # Install bundler
+      - run: gem install bundler --version `cat Gemfile.lock | tail -1 | tr -d " "`
+      - run: bundle config set path vendor/bundle
+
+      # Bundle install dependencies
+      - type: cache-restore
+        key: gem-cache-v2-{{ arch }}-{{ checksum "Gemfile.lock" }}
+
+      - run: bundle install --jobs 4
+
+      - type: cache-save
+        key: gem-cache-v2-{{ arch }}-{{ checksum "Gemfile.lock" }}
+        paths:
+          - vendor/bundle
+
+      # Setup JS dependencies
+      - type: cache-restore
+        key: yarn-cache-v1-{{ arch }}-{{ checksum "yarn.lock" }}
+
+      - run: ./bin/yarn
+
+      - type: cache-save
+        key: yarn-cache-v1-{{ arch }}-{{ checksum "yarn.lock" }}
+        paths:
+          - node_modules
+
+      # Database setup
+      - run: bundle exec rake db:create db:schema:load
+
+      # Run tests
+      - run: bundle exec rails test
+      - run: bundle exec rails test:system
