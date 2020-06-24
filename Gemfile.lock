@@ -105,7 +105,7 @@ GEM
       mini_portile2 (~> 2.4.0)
     public_suffix (3.0.3)
     puma (3.12.6)
-    rack (2.2.2)
+    rack (2.2.3)
     rack-proxy (0.6.5)
       rack
     rack-test (1.1.0)
