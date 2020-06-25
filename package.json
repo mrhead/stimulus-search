@@ -1,11 +1,11 @@
 {
   "dependencies": {
-    "@rails/webpacker": "^4.2.2",
+    "@rails/webpacker": "^5.1.1",
     "core-js": "2",
     "stimulus": "^1.1.1"
   },
   "devDependencies": {
-    "webpack-dev-server": "^3.10.2"
+    "webpack-dev-server": "^3.11.0"
   },
   "license": "UNLICENSED"
 }
