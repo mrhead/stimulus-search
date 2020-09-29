@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@rails/webpacker": "^5.1.1",
+    "@rails/webpacker": "^5.2.1",
     "core-js": "3",
     "stimulus": "^1.1.1"
   },
