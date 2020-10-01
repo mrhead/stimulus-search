@@ -97,7 +97,7 @@ GEM
     mimemagic (0.3.5)
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
-    minitest (5.14.1)
+    minitest (5.14.2)
     msgpack (1.3.3)
     nio4r (2.5.2)
     nokogiri (1.10.9)
@@ -155,8 +155,7 @@ GEM
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
     semantic_range (2.3.0)
-    spring (2.0.2)
-      activesupport (>= 4.2)
+    spring (2.1.1)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
       spring (>= 1.2, < 3.0)
@@ -197,7 +196,7 @@ GEM
     websocket-extensions (0.1.5)
     xpath (3.1.0)
       nokogiri (~> 1.8)
-    zeitwerk (2.3.0)
+    zeitwerk (2.4.0)
 
 PLATFORMS
   ruby
