@@ -5,8 +5,10 @@ updates:
     directory: "/"
     schedule:
       interval: "monthly"
+    open-pull-requests-limit: 100
 
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
       interval: "monthly"
+    open-pull-requests-limit: 100
