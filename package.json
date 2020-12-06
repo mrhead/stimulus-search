@@ -2,7 +2,7 @@
   "dependencies": {
     "@rails/webpacker": "^5.2.1",
     "core-js": "3",
-    "stimulus": "^1.1.1"
+    "stimulus": "2.0.0"
   },
   "devDependencies": {
     "webpack-dev-server": "^3.11.0"
