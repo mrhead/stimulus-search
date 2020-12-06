@@ -6,6 +6,7 @@ const enterKey = 13
 const navigationKeys = [upKey, downKey, enterKey]
 
 export default class extends Controller {
+  static classes = [ "current" ]
   static targets = [ "result" ]
 
   connect() {
@@ -37,7 +38,7 @@ export default class extends Controller {
 
   selectCurrentResult() {
     this.resultTargets.forEach((element, index) => {
-      element.classList.toggle("search__result--current", index == this.currentResultIndex)
+      element.classList.toggle(this.currentClass, index == this.currentResultIndex)
     })
   }
 

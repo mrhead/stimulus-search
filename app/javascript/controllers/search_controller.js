@@ -2,6 +2,7 @@ import { Controller } from "stimulus"
 
 export default class extends Controller {
   static targets = [ "query", "results" ]
+  static values = { url: String }
 
   disconnect() {
     this.reset()
@@ -18,7 +19,7 @@ export default class extends Controller {
     }
     this.previousQuery = this.query
 
-    const url = new URL(this.data.get("url"))
+    const url = new URL(this.urlValue)
     url.searchParams.append("query", this.query)
 
     this.abortPreviousFetchRequest()
