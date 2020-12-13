@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "rails", "~> 6.0.3"
+gem "rails", "~> 6.1.0"
 
 gem "bootsnap"
 gem "puma"
