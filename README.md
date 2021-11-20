@@ -19,10 +19,10 @@ cd stimulus-search
 ./bin/setup
 ```
 
-Start the webserver:
+Start the webserver and esbuild watch process:
 
 ```
-bundle exec rails s
+./bin/dev
 ```
 
 Go to http://localhost:3000/.
@@ -32,6 +32,7 @@ Go to http://localhost:3000/.
 Run:
 
 ```
+rails javascript:build
 rails test
 rails test:system
 ```

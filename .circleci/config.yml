@@ -34,6 +34,8 @@ jobs:
         paths:
           - node_modules
 
+      - run: ./bin/rails javascript:build
+
       # Database setup
       - run: bundle exec rake db:create db:schema:load
 
