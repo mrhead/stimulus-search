@@ -3,13 +3,13 @@ source "https://rubygems.org"
 gem "rails", "~> 6.1.4"
 
 gem "bootsnap"
+gem "hotwire-rails"
+gem "jsbundling-rails"
 gem "puma"
 gem "rexml"
 gem "sass-rails"
 gem "sqlite3"
-gem "turbolinks"
-gem "uglifier" 
-gem "webpacker"
+gem "uglifier"
 
 group :development, :test do
   gem "byebug"
