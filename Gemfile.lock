@@ -80,7 +80,6 @@ GEM
     concurrent-ruby (1.1.9)
     crass (1.0.6)
     erubi (1.10.0)
-    execjs (2.7.0)
     faker (2.19.0)
       i18n (>= 1.6, < 2)
     ffi (1.15.3)
@@ -183,8 +182,6 @@ GEM
       rails (>= 6.0.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
-    uglifier (4.2.0)
-      execjs (>= 0.3.0, < 3)
     web-console (4.1.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -217,7 +214,6 @@ DEPENDENCIES
   sass-rails
   selenium-webdriver
   sqlite3
-  uglifier
   web-console
   webdrivers
 

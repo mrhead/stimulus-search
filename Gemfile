@@ -8,7 +8,6 @@ gem "jsbundling-rails"
 gem "puma"
 gem "sass-rails"
 gem "sqlite3"
-gem "uglifier"
 
 group :development, :test do
   gem "byebug"
