@@ -9,7 +9,7 @@ This is a search autocomplete example created with [Stimulus](https://stimulusjs
 Clone the repository:
 
 ```
-git clone git@github.com:mrhead/stimulus-search.git
+git clone https://github.com/mrhead/stimulus-search.git
 ```
 
 Setup the application:
