@@ -1,38 +1,31 @@
-version: 2
+version: 2.1
+
+orbs:
+  browser-tools: circleci/browser-tools@1.2.3
+  ruby: circleci/ruby@1.2.0
+  node: circleci/node@4.8.1
 
 jobs:
   build:
     docker:
-      - image: circleci/ruby:3.0.0-node-browsers
+      - image: cimg/ruby:3.0.0-browsers
 
     steps:
       - checkout
 
-      # Install bundler
-      - run: gem install bundler --version `cat Gemfile.lock | tail -1 | tr -d " "`
-      - run: bundle config set path vendor/bundle
+      - run:
+          command: |
+              sudo apt-get update
+              sudo apt-get install libsqlite3-dev
+          name: Install SQLite
 
-      # Bundle install dependencies
-      - type: cache-restore
-        key: gem-cache-v2-{{ arch }}-{{ checksum "Gemfile.lock" }}
+      - browser-tools/install-chrome
+      - browser-tools/install-chromedriver
 
-      - run: bundle install --jobs 4
-
-      - type: cache-save
-        key: gem-cache-v2-{{ arch }}-{{ checksum "Gemfile.lock" }}
-        paths:
-          - vendor/bundle
-
-      # Setup JS dependencies
-      - type: cache-restore
-        key: yarn-cache-v1-{{ arch }}-{{ checksum "yarn.lock" }}
-
-      - run: ./bin/yarn
-
-      - type: cache-save
-        key: yarn-cache-v1-{{ arch }}-{{ checksum "yarn.lock" }}
-        paths:
-          - node_modules
+      - ruby/install-deps
+      - node/install-packages:
+          cache-path: ~/project/node_modules
+          pkg-manager: yarn
 
       - run: ./bin/rails javascript:build
 
