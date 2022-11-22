@@ -1,0 +1,30 @@
+name: CI
+on: push
+concurrency:
+  group: ${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      RAILS_ENV: test
+      RUBYOPT: -W:deprecated
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+          ruby-version: 3.1
+      - uses: actions/setup-node@v3
+        with:
+          cache: yarn
+      - run: yarn install --frozen-lockfile
+      - run: bin/rails db:create db:schema:load
+      - run: bin/rails javascript:build
+      - run: bin/rails test
+      - run: bin/rails test:system
+        id: system
+      - uses: actions/upload-artifact@v3
+        if: ${{ failure() && steps.system.conclusion == 'failure' }}
+        with:
+          path: tmp/screenshots
