@@ -3,6 +3,7 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = [ "query", "results" ]
   static values = { url: String }
+  static outlets = [ "search-results" ]
 
   disconnect() {
     this.reset()
@@ -34,8 +35,8 @@ export default class extends Controller {
   }
 
   navigateResults(event) {
-    if(this.searchResultsController) {
-      this.searchResultsController.navigateResults(event)
+    if(this.hasSearchResultsOutlet) {
+      this.searchResultsOutlet.navigateResults(event)
     }
   }
 
@@ -55,9 +56,5 @@ export default class extends Controller {
 
   get query() {
     return this.queryTarget.value
-  }
-
-  get searchResultsController() {
-    return this.application.getControllerForElementAndIdentifier(this.resultsTarget.firstElementChild, "search-results")
   }
 }
