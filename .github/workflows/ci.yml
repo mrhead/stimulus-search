@@ -15,12 +15,7 @@ jobs:
         with:
           bundler-cache: true
           ruby-version: 3.3
-      - uses: actions/setup-node@v3
-        with:
-          cache: yarn
-      - run: yarn install --frozen-lockfile
       - run: bin/rails db:create db:schema:load
-      - run: bin/rails javascript:build
       - run: bin/rails test
       - run: bin/rails test:system
         id: system

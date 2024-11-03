@@ -19,7 +19,7 @@ cd stimulus-search
 ./bin/setup
 ```
 
-Start the webserver and esbuild watch process:
+Start the webserver:
 
 ```
 ./bin/dev

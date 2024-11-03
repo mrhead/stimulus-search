@@ -3,7 +3,7 @@ source "https://rubygems.org"
 gem "rails", "~> 7.2.0"
 
 gem "bootsnap"
-gem "jsbundling-rails"
+gem "importmap-rails"
 gem "propshaft"
 gem "puma"
 gem "sqlite3"
