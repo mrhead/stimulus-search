@@ -32,7 +32,6 @@ Go to http://localhost:3000/.
 Run:
 
 ```
-rails javascript:build
 rails test
 rails test:system
 ```
