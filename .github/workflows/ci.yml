@@ -14,12 +14,5 @@ jobs:
       - uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
-          ruby-version: 3.3
-      - run: bin/rails db:create db:schema:load
-      - run: bin/rails test
-      - run: bin/rails test:system
-        id: system
-      - uses: actions/upload-artifact@v3
-        if: ${{ failure() && steps.system.conclusion == 'failure' }}
-        with:
-          path: tmp/screenshots
+          ruby-version: 4.0
+      - run: bin/ci
